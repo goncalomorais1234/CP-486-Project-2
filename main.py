@@ -35,14 +35,14 @@ def q_learning(state, action, next_state, reward):
         learning_rate * (reward + discount_factor * np.max(Q_table[next_state_index, :]))
 
 # Training the Q-learning Algorithm
-for _ in range(1000):  # Running for a certain number of episodes
-    # Randomly selecting a state and action
+for _ in range(1000):  #
+
     state = np.random.choice(states)
     action = np.random.choice(actions)
 
-    # Simulating the environment and getting the next state and reward
+
     next_state = np.random.choice(states)
-    # Handling errors for undefined rewards
+    # Handling errors 
     reward = rewards.get((state, action, next_state), 0)  
     q_learning(state, action, next_state, reward)
 
